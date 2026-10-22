@@ -1,1 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>FFR Soluciones</title>
+<meta name="description" content="Trabajamos bien. Instalamos, colocamos, reparamos, reformamos y proyectamos en CABA y GBA. Tu casa, tu oficina, tu negocio.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@200;300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#000;--ink:#fff;--muted:#a3a3a3;--line:#3a3a3a;--y:#edc944;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{background:#000;scroll-padding-top:70px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "Inter Tight",system-ui,"Helvetica Neue",Arial,sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:#000;z-index:30}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--y);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+.light{--bg:#f1f1ee;--ink:#000;--muted:#555;--line:#c8c8c3;background:var(--bg);color:var(--ink)}
+.yellow{--bg:var(--y);--ink:#000;--muted:#000;--line:#000;background:var(--y);color:#000}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:#000;border-bottom:1px solid #3a3a3a}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:66px;gap:12px}
+.hlogo{display:block;height:42px;width:auto;color:#fff}
+nav{display:flex;gap:26px;align-items:center;font-size:15px}
+nav a{text-decoration:none;color:#fff;font-weight:300;padding:4px 0;border-bottom:1px solid transparent}
+nav a[aria-current]{border-color:var(--y);font-weight:500}
+nav a.pill{border:1px solid #fff;border-radius:99px;padding:7px 16px;font-weight:500}
+#menu{display:none;background:none;border:1px solid #fff;color:#fff;font:500 14px inherit;padding:7px 14px;border-radius:99px;cursor:pointer}
+@media(max-width:780px){#menu{display:block}
+nav{display:none;position:absolute;top:66px;left:0;right:0;background:#000;flex-direction:column;align-items:flex-start;padding:18px 22px 24px;gap:16px;border-bottom:1px solid #3a3a3a;font-size:20px}
+nav.open{display:flex}}
+.thin{font-weight:200;letter-spacing:-.045em;line-height:1;margin:0}
+h1.thin{font-size:clamp(46px,8.6vw,96px)}
+h2.thin{font-size:clamp(34px,6vw,60px)}
+.lead{font-weight:300;font-size:clamp(18px,2.4vw,22px);max-width:30em;color:var(--muted);margin:22px 0 0}
+section{padding:84px 0;background:var(--bg);color:var(--ink)}
+section.tight{padding-top:0}
+h2+*{margin-top:30px}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.btn{display:inline-block;background:var(--y);color:#000;font:700 16px "Inter Tight",sans-serif;text-decoration:none;padding:14px 22px;border:1px solid var(--y);cursor:pointer;letter-spacing:-.01em}
+.btn.o{background:transparent;color:var(--ink);border-color:var(--ink);font-weight:500}
+.yellow .btn{background:#000;color:#fff;border-color:#000}
+.hero{padding:70px 22px 80px;display:grid;gap:48px 64px;grid-template-columns:1.35fr 1fr;align-items:end}
+@media(max-width:860px){.hero{grid-template-columns:1fr}}
+.idx{list-style:none;margin:0;padding:0 0 0 0;border-left:2px solid var(--ink)}
+.idx li{position:relative;padding-left:34px}
+.idx li::before{content:"";position:absolute;left:0;top:50%;width:22px;border-top:2px solid var(--ink)}
+.idx li:last-child{border-left:0;margin-left:-2px;padding-left:36px}
+.idx li:last-child::before{left:2px}
+.idx a{display:flex;align-items:center;gap:16px;text-decoration:none;font-weight:500;font-size:clamp(30px,4.4vw,44px);letter-spacing:-.045em;padding:9px 0;line-height:1.1}
+.idx a:hover{color:var(--y)}
+.idx svg{width:30px;height:30px;flex:none;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;opacity:.9}
+.rows{border-top:2px solid var(--ink)}
+.row{display:grid;grid-template-columns:64px 1fr;gap:4px 22px;padding:26px 0;border-bottom:1px solid var(--line);text-decoration:none;align-items:start}
+.row:hover h3{color:var(--y)}
+.light .row:hover h3{text-decoration:underline}
+.row svg{width:44px;height:44px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.row h3{margin:0;font-weight:500;font-size:clamp(30px,5vw,46px);letter-spacing:-.045em;line-height:1.05}
+.row p{margin:6px 0 0;color:var(--muted);font-weight:300;max-width:34em}
+.cols{display:grid;gap:34px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.cols>div{border-top:2px solid var(--ink);padding-top:16px}
+.cols h3{margin:0 0 6px;font-weight:500;font-size:26px;letter-spacing:-.04em}
+.cols p{margin:0;color:var(--muted);font-weight:300}
+.steps{counter-reset:s;display:grid;gap:34px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.steps>div{counter-increment:s;border-top:2px solid var(--ink);padding-top:14px}
+.steps>div::before{content:counter(s);font-weight:200;font-size:56px;letter-spacing:-.05em;line-height:1;display:block;margin-bottom:8px}
+.steps h3{margin:0 0 4px;font-weight:500;font-size:24px;letter-spacing:-.035em}
+.steps p{margin:0;color:var(--muted);font-weight:300}
+.box{border:1px solid var(--ink);padding:clamp(22px,4vw,40px);display:grid;gap:26px 48px;grid-template-columns:1fr 1.4fr;align-items:center}
+@media(max-width:700px){.box{grid-template-columns:1fr}}
+.price{font-weight:500;font-size:clamp(58px,11vw,100px);line-height:.95;letter-spacing:-.05em}
+.dark .price,.box .price{color:var(--y)}
+.light .box .price{color:#000}
+.box small{display:block;color:var(--ink);font-weight:300;font-size:18px;line-height:1.4;margin-top:10px;max-width:15em}
+.box ul,.list{margin:0;padding:0;list-style:none}
+.box li,.list li{padding:9px 0;border-bottom:1px solid var(--line);font-weight:300;font-size:19px}
+.box li:last-child,.list li:last-child{border:0}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px}
+.chip{background:none;color:var(--ink);border:1px solid var(--ink);border-radius:99px;padding:7px 16px;font:400 15px "Inter Tight",sans-serif;cursor:pointer}
+.chip[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+.grid{display:grid;gap:26px 18px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.work{text-decoration:none;display:block}
+.work .ph{aspect-ratio:4/3;background:#161616;display:grid;place-items:center;overflow:hidden}
+.work img{width:100%;height:100%;object-fit:cover;display:block}
+.work h3{margin:12px 0 2px;font-weight:500;font-size:22px;letter-spacing:-.03em}
+.work p{margin:0;color:var(--muted);font-weight:300;font-size:15px}
+.photos{columns:2 280px;column-gap:12px}
+.photos figure{margin:0 0 12px;break-inside:avoid}
+.photos img{width:100%;display:block}
+.photos figcaption{font-size:14px;color:var(--muted);padding-top:6px}
+.back{display:inline-block;font-weight:300;text-decoration:none;margin-bottom:26px;border-bottom:1px solid currentColor}
+.meta{color:var(--muted);font-weight:300;margin:14px 0 0}
+details{border-bottom:1px solid var(--line);padding:16px 0}
+summary{cursor:pointer;font-weight:500;font-size:20px}
+details p{margin:10px 0 0;color:var(--muted);font-weight:300;max-width:40em}
+.two{display:grid;gap:44px;grid-template-columns:1.1fr 1fr}
+@media(max-width:760px){.two{grid-template-columns:1fr}}
+.cl{display:grid;gap:16px;align-content:start}
+.cl a{text-decoration:none;font-weight:200;letter-spacing:-.035em;font-size:clamp(22px,4.4vw,36px);line-height:1.15;word-break:break-word}
+.cl a:hover{text-decoration:underline;text-underline-offset:6px}
+.cl span{display:block;font-size:14px;font-weight:500;color:var(--muted);letter-spacing:0}
+form{display:grid;gap:14px;align-content:start}
+label{font-size:14px;font-weight:500;display:grid;gap:6px;color:var(--muted)}
+input,select,textarea{font:inherit;color:var(--ink);background:transparent;border:1px solid var(--ink);padding:12px 14px;width:100%;border-radius:0}
+select option{background:#fff;color:#000}
+.note{color:var(--muted);font-weight:300}
+footer{background:#000;color:#fff;padding:44px 0 36px;font-weight:300;font-size:15px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:24px 60px;justify-content:space-between;align-items:flex-start}
+footer a{display:block;text-decoration:none;padding:2px 0}
+footer a:hover{text-decoration:underline}
+.flogo{height:64px;width:auto;display:block;color:#fff}
+footer{padding:64px 0 36px}
+footer .wrap{display:block}
+.fgrid{display:grid;gap:40px 48px;grid-template-columns:1.2fr 1fr 1fr}
+@media(max-width:760px){.fgrid{grid-template-columns:1fr}}
+.fgrid h4{margin:0 0 12px;font-weight:500;font-size:14px;color:#a3a3a3}
+.fgrid p{margin:14px 0 0;color:#a3a3a3;max-width:16em}
+footer .fgrid a{font-size:17px;padding:4px 0;word-break:break-word}
+.fsign{margin:64px 0 0;padding-top:28px;border-top:1px solid #3a3a3a}
+.fsign b{display:block;font-weight:200;letter-spacing:-.05em;line-height:1;font-size:clamp(48px,11vw,128px)}
+.fsign small{display:block;margin-top:22px;color:#a3a3a3;font-size:14px}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"><symbol id="logo" viewBox="94 212 532 296">
+<defs>
+<g>
+<g id="glyph-0-0">
+<path d="M 11.984375 -214.359375 L 165.78125 -214.359375 L 165.78125 -172.390625 L 62.953125 -172.390625 L 62.953125 -125.015625 L 160.6875 -125.015625 L 160.6875 -83.046875 L 62.953125 -83.046875 L 62.953125 0 L 11.984375 0 Z M 11.984375 -214.359375 "/>
+</g>
+<g id="glyph-0-1">
+<path d="M 11.984375 -214.359375 L 109.421875 -214.359375 C 137.609375 -214.359375 158.546875 -208.507812 172.234375 -196.8125 C 185.921875 -185.125 192.765625 -168.085938 192.765625 -145.703125 C 192.765625 -114.117188 179.078125 -93.429688 151.703125 -83.640625 L 199.0625 0 L 140 0 L 101.03125 -77.34375 L 62.953125 -77.34375 L 62.953125 0 L 11.984375 0 Z M 107.03125 -117.515625 C 118.019531 -117.515625 126.363281 -119.660156 132.0625 -123.953125 C 137.757812 -128.253906 140.609375 -135.203125 140.609375 -144.796875 C 140.609375 -154.390625 137.757812 -161.382812 132.0625 -165.78125 C 126.363281 -170.1875 118.019531 -172.390625 107.03125 -172.390625 L 62.953125 -172.390625 L 62.953125 -117.515625 Z M 107.03125 -117.515625 "/>
+</g>
+<g id="glyph-1-0">
+<path d="M 6.578125 -22.109375 C 6.753906 -19.492188 7.367188 -17.039062 8.421875 -14.75 C 9.472656 -12.46875 10.925781 -10.472656 12.78125 -8.765625 C 14.644531 -7.066406 16.851562 -5.710938 19.40625 -4.703125 C 21.957031 -3.703125 24.851562 -3.203125 28.09375 -3.203125 C 30.726562 -3.203125 33.1875 -3.519531 35.46875 -4.15625 C 37.75 -4.800781 39.726562 -5.742188 41.40625 -6.984375 C 43.09375 -8.234375 44.398438 -9.753906 45.328125 -11.546875 C 46.253906 -13.347656 46.71875 -15.410156 46.71875 -17.734375 C 46.71875 -20.285156 46.175781 -22.351562 45.09375 -23.9375 C 44.019531 -25.53125 42.550781 -26.8125 40.6875 -27.78125 C 38.832031 -28.757812 36.660156 -29.535156 34.171875 -30.109375 C 31.679688 -30.691406 29.023438 -31.253906 26.203125 -31.796875 C 23.441406 -32.347656 20.691406 -32.957031 17.953125 -33.625 C 15.222656 -34.300781 12.789062 -35.234375 10.65625 -36.421875 C 8.53125 -37.609375 6.804688 -39.175781 5.484375 -41.125 C 4.171875 -43.070312 3.515625 -45.570312 3.515625 -48.625 C 3.515625 -51.175781 4.007812 -53.535156 5 -55.703125 C 5.988281 -57.867188 7.425781 -59.726562 9.3125 -61.28125 C 11.207031 -62.832031 13.535156 -64.050781 16.296875 -64.9375 C 19.054688 -65.820312 22.207031 -66.265625 25.75 -66.265625 C 29.644531 -66.265625 33.046875 -65.664062 35.953125 -64.46875 C 38.867188 -63.28125 41.316406 -61.710938 43.296875 -59.765625 C 45.285156 -57.816406 46.789062 -55.546875 47.8125 -52.953125 C 48.832031 -50.367188 49.429688 -47.707031 49.609375 -44.96875 L 45.109375 -44.96875 C 44.984375 -47.28125 44.484375 -49.472656 43.609375 -51.546875 C 42.742188 -53.617188 41.5 -55.429688 39.875 -56.984375 C 38.257812 -58.535156 36.265625 -59.78125 33.890625 -60.71875 C 31.523438 -61.664062 28.78125 -62.140625 25.65625 -62.140625 C 22.957031 -62.140625 20.523438 -61.804688 18.359375 -61.140625 C 16.203125 -60.472656 14.359375 -59.546875 12.828125 -58.359375 C 11.296875 -57.171875 10.109375 -55.769531 9.265625 -54.15625 C 8.429688 -52.539062 8.015625 -50.753906 8.015625 -48.796875 C 8.015625 -46.484375 8.566406 -44.59375 9.671875 -43.125 C 10.785156 -41.664062 12.269531 -40.460938 14.125 -39.515625 C 15.988281 -38.578125 18.117188 -37.816406 20.515625 -37.234375 C 22.921875 -36.660156 25.382812 -36.128906 27.90625 -35.640625 C 30.96875 -35.035156 33.894531 -34.378906 36.6875 -33.671875 C 39.476562 -32.972656 41.953125 -32 44.109375 -30.75 C 46.273438 -29.5 48.003906 -27.851562 49.296875 -25.8125 C 50.585938 -23.769531 51.234375 -21.132812 51.234375 -17.90625 C 51.234375 -14.925781 50.628906 -12.257812 49.421875 -9.90625 C 48.222656 -7.5625 46.570312 -5.597656 44.46875 -4.015625 C 42.375 -2.429688 39.914062 -1.210938 37.09375 -0.359375 C 34.269531 0.484375 31.207031 0.90625 27.90625 0.90625 C 24.0625 0.90625 20.59375 0.3125 17.5 -0.875 C 14.414062 -2.0625 11.75 -3.6875 9.5 -5.75 C 7.25 -7.820312 5.492188 -10.257812 4.234375 -13.0625 C 2.972656 -15.863281 2.253906 -18.878906 2.078125 -22.109375 Z M 6.578125 -22.109375 "/>
+</g>
+<g id="glyph-1-1">
+<path d="M 7.828125 -32.625 C 7.828125 -28.113281 8.425781 -24.046875 9.625 -20.421875 C 10.832031 -16.796875 12.53125 -13.703125 14.71875 -11.140625 C 16.90625 -8.585938 19.570312 -6.625 22.71875 -5.25 C 25.875 -3.882812 29.40625 -3.203125 33.3125 -3.203125 C 37.269531 -3.203125 40.820312 -3.882812 43.96875 -5.25 C 47.125 -6.625 49.796875 -8.570312 51.984375 -11.09375 C 54.179688 -13.625 55.878906 -16.703125 57.078125 -20.328125 C 58.273438 -23.953125 58.875 -28.050781 58.875 -32.625 C 58.875 -37.195312 58.273438 -41.296875 57.078125 -44.921875 C 55.878906 -48.546875 54.164062 -51.632812 51.9375 -54.1875 C 49.71875 -56.75 47.03125 -58.710938 43.875 -60.078125 C 40.726562 -61.453125 37.207031 -62.140625 33.3125 -62.140625 C 29.40625 -62.140625 25.875 -61.453125 22.71875 -60.078125 C 19.570312 -58.710938 16.90625 -56.75 14.71875 -54.1875 C 12.53125 -51.632812 10.832031 -48.546875 9.625 -44.921875 C 8.425781 -41.296875 7.828125 -37.195312 7.828125 -32.625 Z M 3.328125 -32.625 C 3.328125 -37.800781 4.03125 -42.460938 5.4375 -46.609375 C 6.851562 -50.753906 8.863281 -54.285156 11.46875 -57.203125 C 14.082031 -60.128906 17.234375 -62.367188 20.921875 -63.921875 C 24.617188 -65.484375 28.75 -66.265625 33.3125 -66.265625 C 37.9375 -66.265625 42.09375 -65.484375 45.78125 -63.921875 C 49.46875 -62.367188 52.617188 -60.128906 55.234375 -57.203125 C 57.847656 -54.285156 59.859375 -50.753906 61.265625 -46.609375 C 62.671875 -42.460938 63.375 -37.800781 63.375 -32.625 C 63.375 -27.445312 62.671875 -22.785156 61.265625 -18.640625 C 59.859375 -14.492188 57.847656 -10.972656 55.234375 -8.078125 C 52.617188 -5.191406 49.46875 -2.972656 45.78125 -1.421875 C 42.09375 0.128906 37.9375 0.90625 33.3125 0.90625 C 28.75 0.90625 24.609375 0.128906 20.890625 -1.421875 C 17.171875 -2.972656 14.019531 -5.191406 11.4375 -8.078125 C 8.851562 -10.972656 6.851562 -14.492188 5.4375 -18.640625 C 4.03125 -22.785156 3.328125 -27.445312 3.328125 -32.625 Z M 3.328125 -32.625 "/>
+</g>
+<g id="glyph-1-2">
+<path d="M 5.484375 -65.34375 L 9.71875 -65.34375 L 9.71875 -4.015625 L 46.71875 -4.015625 L 46.71875 0 L 5.484375 0 Z M 5.484375 -65.34375 "/>
+</g>
+<g id="glyph-1-3">
+<path d="M 5.484375 -65.53125 L 9.71875 -65.53125 L 9.71875 -23.125 C 9.71875 -16.726562 11.472656 -11.804688 14.984375 -8.359375 C 18.492188 -4.921875 23.523438 -3.203125 30.078125 -3.203125 C 36.617188 -3.203125 41.628906 -4.921875 45.109375 -8.359375 C 48.585938 -11.804688 50.328125 -16.726562 50.328125 -23.125 L 50.328125 -65.53125 L 54.65625 -65.53125 L 54.65625 -22.75 C 54.65625 -15.257812 52.492188 -9.441406 48.171875 -5.296875 C 43.847656 -1.160156 37.816406 0.90625 30.078125 0.90625 C 22.328125 0.90625 16.289062 -1.160156 11.96875 -5.296875 C 7.644531 -9.441406 5.484375 -15.257812 5.484375 -22.75 Z M 5.484375 -65.53125 "/>
+</g>
+<g id="glyph-1-4">
+<path d="M 3.328125 -32.625 C 3.328125 -37.800781 4 -42.460938 5.34375 -46.609375 C 6.695312 -50.753906 8.632812 -54.285156 11.15625 -57.203125 C 13.675781 -60.128906 16.738281 -62.367188 20.34375 -63.921875 C 23.945312 -65.484375 27.96875 -66.265625 32.40625 -66.265625 C 39.914062 -66.265625 46.097656 -64.207031 50.953125 -60.09375 C 55.816406 -55.976562 59 -50.234375 60.5 -42.859375 L 56 -42.859375 C 54.613281 -48.953125 51.878906 -53.6875 47.796875 -57.0625 C 43.722656 -60.445312 38.59375 -62.140625 32.40625 -62.140625 C 28.625 -62.140625 25.21875 -61.453125 22.1875 -60.078125 C 19.15625 -58.710938 16.570312 -56.75 14.4375 -54.1875 C 12.3125 -51.632812 10.675781 -48.546875 9.53125 -44.921875 C 8.394531 -41.296875 7.828125 -37.195312 7.828125 -32.625 C 7.828125 -28.113281 8.394531 -24.046875 9.53125 -20.421875 C 10.675781 -16.796875 12.3125 -13.703125 14.4375 -11.140625 C 16.570312 -8.585938 19.15625 -6.625 22.1875 -5.25 C 25.21875 -3.882812 28.625 -3.203125 32.40625 -3.203125 C 38.894531 -3.203125 44.207031 -5.039062 48.34375 -8.71875 C 52.488281 -12.40625 55.160156 -17.539062 56.359375 -24.125 L 60.859375 -24.125 C 59.660156 -16.269531 56.582031 -10.132812 51.625 -5.71875 C 46.675781 -1.300781 40.269531 0.90625 32.40625 0.90625 C 27.96875 0.90625 23.945312 0.128906 20.34375 -1.421875 C 16.738281 -2.972656 13.675781 -5.191406 11.15625 -8.078125 C 8.632812 -10.972656 6.695312 -14.492188 5.34375 -18.640625 C 4 -22.785156 3.328125 -27.445312 3.328125 -32.625 Z M 3.328125 -32.625 "/>
+</g>
+<g id="glyph-1-5">
+<path d="M 5.484375 -65.34375 L 9.8125 -65.34375 L 9.8125 0 L 5.484375 0 Z M 5.484375 -65.34375 "/>
+</g>
+<g id="glyph-1-6">
+<path d="M 5.578125 -65.0625 L 11.53125 -65.0625 L 52.390625 -4.5625 L 52.390625 -65.0625 L 56.625 -65.0625 L 56.625 0 L 50.328125 0 L 9.8125 -60.046875 L 9.8125 0 L 5.578125 0 Z M 5.578125 -65.0625 "/>
+</g>
+<g id="glyph-1-7">
+<path d="M 5.484375 -65.34375 L 46.90625 -65.34375 L 46.90625 -61.328125 L 9.71875 -61.328125 L 9.71875 -34.640625 L 45.375 -34.640625 L 45.375 -30.703125 L 9.71875 -30.703125 L 9.71875 -4.015625 L 47.265625 -4.015625 L 47.265625 0 L 5.484375 0 Z M 5.484375 -65.34375 "/>
+</g>
+</g>
+</defs>
+<g fill="currentColor" fill-opacity="1">
+<use xlink:href="#glyph-0-0" x="81.7921" y="426.433"/>
+</g>
+<g fill="currentColor" fill-opacity="1">
+<use xlink:href="#glyph-0-0" x="254.502847" y="426.433"/>
+</g>
+<g fill="currentColor" fill-opacity="1">
+<use xlink:href="#glyph-0-1" x="427.213595" y="426.433"/>
+</g>
+<g fill="currentColor" fill-opacity="1">
+<use xlink:href="#glyph-1-0" x="91.713186" y="507.005187"/>
+</g>
+<g fill="currentColor" fill-opacity="1">
+<use xlink:href="#glyph-1-1" x="145.460617" y="507.005187"/>
+</g>
+<g fill="currentColor" fill-opacity="1">
+<use xlink:href="#glyph-1-2" x="212.16325" y="507.005187"/>
+</g>
+<g fill="currentColor" fill-opacity="1">
+<use xlink:href="#glyph-1-3" x="257.988111" y="507.005187"/>
+</g>
+<g fill="currentColor" fill-opacity="1">
+<use xlink:href="#glyph-1-4" x="317.317353" y="507.005187"/>
+<use xlink:href="#glyph-1-5" x="381.50817" y="507.005187"/>
+</g>
+<g fill="currentColor" fill-opacity="1">
+<use xlink:href="#glyph-1-1" x="396.822137" y="507.005187"/>
+</g>
+<g fill="currentColor" fill-opacity="1">
+<use xlink:href="#glyph-1-6" x="463.52477" y="507.005187"/>
+</g>
+<g fill="currentColor" fill-opacity="1">
+<use xlink:href="#glyph-1-7" x="525.635913" y="507.005187"/>
+</g>
+<g fill="currentColor" fill-opacity="1">
+<use xlink:href="#glyph-1-0" x="574.971913" y="507.005187"/>
+</g>
+</symbol></svg>
+<header><div class="wrap">
+  <a href="#inicio" aria-label="FFR Soluciones, inicio"><svg class="hlogo" viewBox="0 0 532 296"><use href="#logo"/></svg></a>
+  <button id="menu" aria-expanded="false">Menú</button>
+  <nav id="nav"></nav>
+</div></header>
+<main id="main"></main>
+<footer><div class="wrap" id="foot"></div></footer>
+
+<script>
+/* ==================================================================
+   SITIO FFR SOLUCIONES: todo el contenido vive en SITE.
+   Para ampliar, solo se agrega información acá:
+   - servicios: sumar {id, t, corto, detalle, incluye[], icono}
+   - trabajos (portfolio): sumar {id, titulo, servicio, zona, resumen, fotos[]}
+     (la pestaña "Trabajos" aparece sola cuando hay al menos uno)
+   - paginas: pestañas nuevas, ej. "Nosotros", con bloques de texto, lista o fotos
+   - faq, redes, textos: editar libremente
+   ================================================================== */
+const SITE = {
+  nombre: "FFR Soluciones",
+  zona: "CABA y GBA",
+  eslogan: "Tu casa, tu oficina, tu negocio.",
+  latiguillo: "Trabajamos bien.",
+  whatsapp: "5491164522490", whatsappVisible: "11 6452-2490",
+  mail: "teayudamos@ffrsoluciones.com",
+  redes: { instagram: "https://www.instagram.com/ffrsoluciones/", facebook: "" },
+  servicios: [
+    { id: "instalar", t: "Instalar", icono: "plug", corto: "Lo que compraste y falta dejar funcionando.",
+      detalle: "Instalamos lo que necesite tu casa, local u oficina y lo dejamos andando.", incluye: ["Termotanques", "Lavarropas y lavavajillas", "Grifería, bachas y piletas", "Cocinas y hornos eléctricos", "Tenders para secado de prendas"] },
+    { id: "colocar", t: "Colocar", icono: "nivel", corto: "Que quede derecho, firme y bien terminado.",
+      detalle: "Colocación prolija, medida y nivelada, de lo más simple a lo más exigente.", incluye: ["TV en pared, repisa o mueble", "Estanterías, repisas y alacenas", "Cuadros y elementos colgantes", "Revestimientos plásticos y cementicios", "Membrana"] },
+    { id: "reparar", t: "Reparar", icono: "llave", corto: "Lo que se rompió o dejó de andar.",
+      detalle: "Diagnosticamos el problema y lo arreglamos para que vuelvas a tu rutina.", incluye: ["Diagnóstico y reparación de termotanques", "Grifería y llaves de paso", "Inodoros, bidets, bachas y piletas", "Destapaciones simples", "Impermeabilización de techos", "Limpieza de calefones"] },
+    { id: "reformar", t: "Reformar", icono: "casa", corto: "Renovar un ambiente, una cocina o un local.",
+      detalle: "Resolvemos ambientes completos, de la demolición a la terminación.", incluye: ["Pintura de interiores, exteriores y frentes", "Pintura de pisos, techos y maderas", "Revestimientos plásticos y cementicios", "Plomería de obra nueva"] },
+    { id: "proyectar", t: "Proyectar", icono: "escuadra", corto: "Proyecto y dirección de obra, de la idea a la obra terminada.",
+      detalle: "Proyecto y dirección de obra: del relevamiento a la obra terminada, con documentación clara y presupuesto para decidir con datos.", incluye: ["Proyecto de viviendas", "Dirección de obra", "Modelado BIM", "Planos y documentación CAD", "Relevamiento y mensura", "Coordinación de instalaciones", "Presupuesto"] }
+  ],
+  rubros: [
+    { id: "pintura", t: "Pintura", icono: "rodillo", items: ["Pintura de interiores", "Pintura de exteriores", "Pintura de frentes", "Pintura de aberturas", "Pintura de aberturas de madera", "Pintura de maderas", "Pintura de pisos", "Pintura de techos", "Pintura impermeabilizante", "Revestimientos plásticos", "Revestimientos cementicios", "Colocación de membrana", "Impermeabilización de techos"] },
+    { id: "plomeria", t: "Plomería", icono: "grifo", items: ["Instalación de termotanque eléctrico", "Instalación de termotanque", "Diagnóstico y reparación de termotanque", "Instalación de lavarropas", "Instalación de lavavajillas", "Instalación de grifería", "Instalación de bachas y piletas", "Cambio y reparación de grifería", "Cambio y reparación de llave de paso", "Cambio y reparación de inodoro o bidet", "Cambio y reparación de bachas y piletas", "Destapaciones simples", "Plomería de obra nueva"] },
+    { id: "domesticos", t: "Servicios domésticos", icono: "tv", items: ["Instalación de TV en pared, repisa o mueble", "Instalación de estanterías", "Instalación de cuadros, repisas, alacenas y elementos colgantes", "Instalación de cocinas eléctricas", "Instalación de hornos eléctricos", "Instalación de tenders para secado de prendas"] },
+    { id: "proyecto", t: "Proyecto y dirección de obra", icono: "escuadra", items: ["Proyecto de viviendas", "Dirección de obra", "Modelado BIM", "Planos y documentación CAD", "Relevamiento y mensura", "Coordinación de instalaciones", "Presupuesto"] }
+  ],
+  proceso: [
+    { t: "Visita técnica", d: "Vamos, vemos el lugar, medimos y sacamos fotos." },
+    { t: "Presupuesto", d: "Te armamos un presupuesto claro de la tarea." },
+    { t: "Manos a la obra", d: "Hacemos el trabajo y lo dejamos terminado." }
+  ],
+  clientes: [
+    { t: "Casas", d: "Viviendas y departamentos." },
+    { t: "Locales", d: "Comercios y negocios." },
+    { t: "Consorcios", d: "Edificios y administraciones." }
+  ],
+  visita: { precio: "$30.000", nota: "Se descuentan del presupuesto una vez aceptado.", horario: "Visitamos de lunes a viernes de 10 a 20 hs, según disponibilidad de agenda.", incluye: ["Relevamiento fotográfico", "Mensura", "Toma de parámetros para el desarrollo de la tarea", "Confección de presupuesto", "Asesoramiento"] },
+  trabajos: [],  // { id:"cocina-devoto", titulo:"Cocina en Villa Devoto", servicio:"reformar", zona:"CABA", resumen:"...", fotos:[{src:"data:image/jpeg;base64,...", titulo:"Antes"}] }
+  paginas: [],   // { id:"nosotros", titulo:"Nosotros", bloques:[ {h:"Quiénes somos", p:"..."}, {lista:["...","..."]}, {fotos:[{src:"...",titulo:"..."}]} ] }
+  faq: []        // { p:"¿Trabajan los sábados?", r:"..." }
+};
+/* ================================================================== */
+
+const IC = {
+  plug:'<path d="M17 5v10M31 5v10M11 15h26v6a13 13 0 0 1-26 0zM24 34v9"/>',
+  nivel:'<path d="M4 16h40v16H4zM20 22h8v4h-8zM12 16v6M36 16v6"/>',
+  llave:'<path d="M31 6a11 11 0 0 0-10 14L6 35l7 7 15-15a11 11 0 0 0 14-10l-7 6-6-1-1-6z"/>',
+  casa:'<path d="M5 24 24 7l19 17M11 20v22h26V20M20 42V30h8v12"/>',
+  escuadra:'<path d="M8 6v36h36zM16 28v10h10"/>',
+  rodillo:'<path d="M7 8h28v10H7zM35 13h7v12H22v7M19 32h6v11h-6z"/>',
+  grifo:'<path d="M8 22h16a8 8 0 0 1 8 8v3M14 22v-9M9 13h10M28 33h8M32 39v4"/>',
+  tv:'<path d="M5 10h38v24H5zM17 42h14M24 34v8"/>'
+};
+const icon = k => '<svg viewBox="0 0 48 48" aria-hidden="true">' + (IC[k] || IC.casa) + '</svg>';
+const $ = id => document.getElementById(id);
+const esc = s => String(s == null ? "" : s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const wa = t => "https://wa.me/" + SITE.whatsapp + "?text=" + encodeURIComponent(t);
+const svc = id => SITE.servicios.find(s => s.id === id);
+let filtro = "todos";
+
+const waBtn = (label, msg, cls) => '<a class="btn ' + (cls || "") + '" target="_blank" rel="noopener" href="' + wa(msg) + '">' + esc(label) + '</a>';
+const visitaBox = () => '<div class="box"><div><div class="price">' + esc(SITE.visita.precio) + '</div><small>visita técnica' + (SITE.visita.nota ? '. ' + esc(SITE.visita.nota) : '') + '</small></div><div><ul>' + SITE.visita.incluye.map(i => '<li>' + esc(i) + '</li>').join("") + '</ul>' + (SITE.visita.horario ? '<p class="note" style="margin:16px 0 0">' + esc(SITE.visita.horario) + '</p>' : '') + '</div></div>';
+const cta = (h, msg) => '<section class="yellow"><div class="wrap"><h2 class="thin">' + h + '</h2><div class="btns" style="margin-top:28px">' + waBtn("Escribinos por WhatsApp", msg || "Hola, quiero hacer una consulta.") + '</div></div></section>';
+const workCard = t => { const f = (t.fotos || [])[0], s = svc(t.servicio);
+  return '<a class="work" href="#trabajo-' + esc(t.id) + '"><div class="ph">' + (f ? '<img loading="lazy" src="' + esc(f.src) + '" alt="' + esc(t.titulo) + '">' : '<svg viewBox="0 0 48 48" width="56" height="56" style="stroke:#555;fill:none;stroke-width:1.6">' + (IC[s && s.icono] || IC.casa) + '</svg>') + '</div><h3>' + esc(t.titulo) + '</h3><p>' + esc([s && s.t, t.zona].filter(Boolean).join(" · ")) + '</p></a>'; };
+const photos = a => a && a.length ? '<div class="photos">' + a.map(f => '<figure><img loading="lazy" src="' + esc(f.src) + '" alt="' + esc(f.titulo || "") + '">' + (f.titulo ? '<figcaption>' + esc(f.titulo) + '</figcaption>' : '') + '</figure>').join("") + '</div>' : "";
+const rubrosSec = full => '<section class="tight"><div class="wrap"><h2 class="thin">Algunos de los trabajos que resolvemos</h2><p class="lead" style="margin-top:14px">Son solo ejemplos. Si lo que necesitás no figura en la lista, escribinos y lo vemos.</p><div class="cols" style="margin-top:36px;grid-template-columns:repeat(auto-fit,minmax(270px,1fr))">' + SITE.rubros.map(r => { const it = full ? r.items : r.items.slice(0, 5); return '<div><h3 style="display:flex;align-items:center;gap:12px"><svg viewBox="0 0 48 48" width="30" height="30" style="flex:none;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round">' + (IC[r.icono] || IC.casa) + '</svg>' + esc(r.t) + '</h3><ul class="list" style="margin-top:10px">' + it.map(i => '<li style="font-size:17px;padding:7px 0">' + esc(i) + '</li>').join("") + '</ul>' + (!full && r.items.length > 5 ? '<p style="margin:10px 0 0"><a href="#servicios">Ver más ejemplos</a></p>' : '') + '</div>'; }).join("") + '</div></div></section>';
+const perfilSec = p => '<section class="light"><div class="wrap"><div class="two"><div><p class="note" style="margin:0 0 10px">A cargo del proyecto</p><h2 class="thin">' + esc(p.nombre) + '</h2><p style="margin:14px 0 0;font-weight:500;font-size:20px">' + esc(p.titulo) + '</p></div><div><p class="lead" style="margin:0 0 18px;color:var(--ink)">' + esc(p.texto) + '</p><ul class="list">' + p.datos.map(d => '<li>' + esc(d) + '</li>').join("") + '</ul></div></div></div></section>';
+const faqHtml = () => SITE.faq.map(f => '<details><summary>' + esc(f.p) + '</summary><p>' + esc(f.r) + '</p></details>').join("");
+
+const V = {
+  inicio() {
+    const feat = SITE.trabajos.slice(0, 3);
+    return '<div class="wrap hero"><div><h1 class="thin">' + esc(SITE.eslogan) + '</h1><p style="margin:26px 0 0;font-size:clamp(28px,4.2vw,44px);letter-spacing:-.045em;line-height:1.1;display:flex;flex-direction:column;gap:2px"><span style="font-weight:500;white-space:nowrap">' + esc(SITE.latiguillo) + '</span><span style="font-weight:200;white-space:nowrap">' + esc(SITE.zona) + '.</span></p>' +
+      '<div class="btns"><a class="btn" href="#contacto">Pedí una visita técnica</a><a class="btn o" href="#servicios">Ver servicios</a></div></div>' +
+      '<ul class="idx">' + SITE.servicios.map(s => '<li><a href="#servicio-' + s.id + '">' + icon(s.icono) + esc(s.t) + '</a></li>').join("") + '</ul></div>' +
+      rubrosSec(false) + (feat.length ? '<section class="light"><div class="wrap"><h2 class="thin">Trabajos recientes</h2><div class="grid">' + feat.map(workCard).join("") + '</div><div class="btns"><a class="btn o" href="#trabajos">Ver todos los trabajos</a></div></div></section>' : '') +
+      '<section class="light"><div class="wrap"><h2 class="thin">Cómo trabajamos</h2><div class="steps">' + SITE.proceso.map(p => '<div><h3>' + esc(p.t) + '</h3><p>' + esc(p.d) + '</p></div>').join("") + '</div></div></section>' +
+      '<section><div class="wrap"><div class="two" style="align-items:end"><div><p class="note" style="margin:0 0 10px">Dónde trabajamos</p><h2 class="thin">' + esc(SITE.zona) + '</h2></div><p class="lead" style="margin:0;color:var(--ink)">Capital Federal y Gran Buenos Aires. Contanos tu zona y coordinamos la visita técnica.</p></div></div></section>' + '<section class="tight"><div class="wrap"><h2 class="thin">Para quién trabajamos</h2><div class="cols">' + SITE.clientes.map(c => '<div><h3>' + esc(c.t) + '</h3><p>' + esc(c.d) + '</p></div>').join("") + '</div></div></section>' +
+      '<section class="tight"><div class="wrap">' + visitaBox() + '</div></section>' +
+      (SITE.faq.length ? '<section class="light"><div class="wrap"><h2 class="thin">Preguntas frecuentes</h2>' + faqHtml() + '</div></section>' : '') +
+      cta("¿Tenés algo para resolver? Contanos.");
+  },
+  servicios() {
+    return '<section><div class="wrap"><h1 class="thin" style="font-size:clamp(46px,8vw,84px)">Servicios</h1><p class="lead">Chico o grande, lo resolvemos en ' + esc(SITE.zona) + '.</p><div class="rows" style="margin-top:44px">' +
+      SITE.servicios.map(s => '<a class="row" href="#servicio-' + s.id + '">' + icon(s.icono) + '<div><h3>' + esc(s.t) + '</h3><p>' + esc(s.corto) + '</p></div></a>').join("") + '</div></div></section>' +
+      rubrosSec(true) + '<section class="tight"><div class="wrap">' + visitaBox() + '</div></section>' + cta("Contanos qué necesitás.");
+  },
+  servicio(id) {
+    const s = svc(id); if (!s) return V.inicio();
+    const rel = SITE.trabajos.filter(t => t.servicio === id);
+    return '<section><div class="wrap"><a class="back" href="#servicios">Todos los servicios</a><h1 class="thin" style="font-size:clamp(52px,10vw,120px)">' + esc(s.t) + '</h1><p class="lead">' + esc(s.detalle) + '</p>' +
+      '<div class="two" style="margin-top:44px"><div><p class="note" style="margin:0 0 6px">Algunos ejemplos:</p><ul class="list">' + s.incluye.map(i => '<li>' + esc(i) + '</li>').join("") + '</ul></div>' + photos(s.fotos) + '</div>' +
+      '<div class="btns">' + waBtn("Consultar por " + s.t.toLowerCase(), "Hola, quiero consultar por: " + s.t + ".") + '</div></div></section>' +
+      (s.perfil ? perfilSec(s.perfil) : '') + (rel.length ? '<section class="light"><div class="wrap"><h2 class="thin">Trabajos de ' + esc(s.t.toLowerCase()) + '</h2><div class="grid">' + rel.map(workCard).join("") + '</div></div></section>' : '');
+  },
+  trabajos() {
+    const ids = [...new Set(SITE.trabajos.map(t => t.servicio))], list = SITE.trabajos.filter(t => filtro === "todos" || t.servicio === filtro);
+    return '<section><div class="wrap"><h1 class="thin" style="font-size:clamp(46px,8vw,84px)">Trabajos</h1>' +
+      '<div class="chips" style="margin-top:34px"><button class="chip" data-f="todos" aria-pressed="' + (filtro === "todos") + '">Todos</button>' + ids.map(i => '<button class="chip" data-f="' + esc(i) + '" aria-pressed="' + (filtro === i) + '">' + esc((svc(i) || {}).t || i) + '</button>').join("") + '</div>' +
+      '<div class="grid">' + list.map(workCard).join("") + '</div></div></section>' + cta("¿Te imaginás algo así en tu espacio?");
+  },
+  trabajo(id) {
+    const t = SITE.trabajos.find(x => x.id === id); if (!t) return V.trabajos();
+    const s = svc(t.servicio);
+    return '<section><div class="wrap"><a class="back" href="#trabajos">Todos los trabajos</a><h1 class="thin" style="font-size:clamp(44px,8vw,90px)">' + esc(t.titulo) + '</h1><p class="meta">' + esc([s && s.t, t.zona, t.anio].filter(Boolean).join(" · ")) + '</p>' +
+      (t.resumen ? '<p class="lead">' + esc(t.resumen) + '</p>' : '') + '<div style="margin-top:40px">' + photos(t.fotos) + '</div></div></section>' + cta("¿Tenés un trabajo parecido?", "Hola, vi el trabajo " + t.titulo + " y quiero consultar.");
+  },
+  pagina(id) {
+    const p = SITE.paginas.find(x => x.id === id); if (!p) return V.inicio();
+    return '<section><div class="wrap"><h1 class="thin" style="font-size:clamp(46px,8vw,84px)">' + esc(p.titulo) + '</h1><div style="margin-top:36px;max-width:44em">' +
+      (p.bloques || []).map(b => (b.h ? '<h2 class="thin" style="font-size:34px;margin:40px 0 10px">' + esc(b.h) + '</h2>' : '') + (b.p ? '<p>' + esc(b.p) + '</p>' : '') + (b.lista ? '<ul class="list">' + b.lista.map(i => '<li>' + esc(i) + '</li>').join("") + '</ul>' : '') + (b.fotos ? photos(b.fotos) : '')).join("") +
+      '</div></div></section>' + cta("¿Hablamos?");
+  },
+  contacto() {
+    return '<section><div class="wrap"><h1 class="thin" style="font-size:clamp(46px,8vw,84px)">Contacto</h1><p class="lead">Contanos qué necesitás y te respondemos por WhatsApp.</p><div class="two" style="margin-top:44px">' +
+      '<div class="cl"><a target="_blank" rel="noopener" href="' + wa("Hola") + '"><span>WhatsApp</span>' + esc(SITE.whatsappVisible) + '</a><a href="mailto:' + esc(SITE.mail) + '"><span>Mail</span>' + esc(SITE.mail) + '</a>' +
+      (SITE.redes.instagram ? '<a target="_blank" rel="noopener" href="' + esc(SITE.redes.instagram) + '"><span>Instagram</span>@ffrsoluciones</a>' : '') + '<div class="note">Trabajamos en ' + esc(SITE.zona) + '.</div></div>' +
+      '<form onsubmit="return false"><label>Nombre<input id="f-n" autocomplete="name"></label><label>¿Qué necesitás?<select id="f-s">' + SITE.servicios.map(s => '<option>' + esc(s.t) + '</option>').join("") + '<option>Visita técnica</option><option>Otra cosa</option></select></label>' +
+      '<label>Barrio o localidad<input id="f-z"></label><label>Detalle<textarea id="f-m" rows="3"></textarea></label><a class="btn" id="f-go" target="_blank" rel="noopener" style="text-align:center">Mandar por WhatsApp</a></form></div></div></section>' +
+      '<section class="tight"><div class="wrap">' + visitaBox() + '</div></section>';
+  }
+};
+
+function tabs() {
+  const t = [["inicio", "Inicio"], ["servicios", "Servicios"]];
+  if (SITE.trabajos.length) t.push(["trabajos", "Trabajos"]);
+  SITE.paginas.forEach(p => t.push(["p-" + p.id, p.titulo]));
+  return t;
+}
+function render() {
+  const h = (location.hash || "#inicio").slice(1);
+  let k = h, html;
+  if (h.startsWith("servicio-")) html = V.servicio(h.slice(9)), k = "servicios";
+  else if (h.startsWith("trabajo-")) html = V.trabajo(h.slice(8)), k = "trabajos";
+  else if (h.startsWith("p-")) html = V.pagina(h.slice(2));
+  else html = (V[h] || V.inicio)();
+  $("main").innerHTML = html;
+  $("nav").innerHTML = tabs().map(t => '<a href="#' + t[0] + '"' + (t[0] === k ? ' aria-current="page"' : '') + '>' + esc(t[1]) + '</a>').join("") + '<a class="pill" href="#contacto"' + (k === "contacto" ? ' aria-current="page"' : '') + '>Contacto</a>';
+  $("nav").classList.remove("open"); $("menu").setAttribute("aria-expanded", "false");
+  document.title = SITE.nombre + " · " + SITE.latiguillo;
+  const go = $("f-go");
+  if (go) { const u = () => { const n = $("f-n").value.trim(), z = $("f-z").value.trim(), m = $("f-m").value.trim(); go.href = wa("Hola" + (n ? ", soy " + n : "") + ". Necesito: " + $("f-s").value + "." + (z ? " Zona: " + z + "." : "") + (m ? " " + m : "")); }; ["f-n", "f-s", "f-z", "f-m"].forEach(i => $(i).addEventListener("input", u)); u(); }
+  document.querySelectorAll(".chip").forEach(c => c.onclick = () => { filtro = c.dataset.f; render(); });
+}
+addEventListener("hashchange", () => { render(); scrollTo(0, 0); });
+$("menu").onclick = () => { const o = $("nav").classList.toggle("open"); $("menu").setAttribute("aria-expanded", o); };
+$("foot").innerHTML = '<div class="fgrid"><div><svg class="flogo" viewBox="0 0 532 296"><use href="#logo"/></svg><p>' + esc(SITE.eslogan) + '</p></div>' +
+  '<div><h4>Navegar</h4>' + tabs().concat([["contacto", "Contacto"]]).map(x => '<a href="#' + x[0] + '">' + esc(x[1]) + '</a>').join("") + '</div>' +
+  '<div><h4>Contacto</h4><a href="' + wa("Hola") + '" target="_blank" rel="noopener">' + esc(SITE.whatsappVisible) + '</a><a href="mailto:' + esc(SITE.mail) + '">' + esc(SITE.mail) + '</a>' + (SITE.redes.instagram ? '<a href="' + esc(SITE.redes.instagram) + '" target="_blank" rel="noopener">Instagram</a>' : '') + '<span style="display:block;color:#a3a3a3;padding:4px 0;font-size:17px">' + esc(SITE.zona) + '</span></div></div>' +
+  '<div class="fsign"><b>' + esc(SITE.latiguillo) + '</b><small>\u00a9 ' + new Date().getFullYear() + ' ' + esc(SITE.nombre) + '</small></div>';
+render();
+</script>
+</body>
+</html>
 ffrsoluciones.com
